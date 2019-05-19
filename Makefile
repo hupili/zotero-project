@@ -6,6 +6,7 @@ target: build-zotero-client build-zotero-standalone-build
 
 build-zotero-client:
 	echo "npm build Zetero client"
+	cd zotero-client; npm install
 	cd zotero-client; npm run build
 
 build-zotero-standalone-build:
@@ -14,7 +15,7 @@ build-zotero-standalone-build:
 
 # Bootstrap Zotero dev environment
 prepare-env:
-	git clone --recursive https://github.com/zotero/zotero zotero-client
+	git clone --recursive https://github.com/hupili/zotero zotero-client
 	git clone --recursive https://github.com/zotero/zotero-build
 	git clone --recursive https://github.com/zotero/zotero-standalone-build
 	cd zotero-standalone-build; ./fetch_xulrunner.sh -p m
